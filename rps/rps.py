@@ -7,6 +7,15 @@ bp = Blueprint('rps',__name__)
 
 @bp.route('/')
 def home():
+    if request.method == 'POST':
+    if request.form['submit_button'] == 'Rock':
+        pass # do something
+    elif request.form['submit_button'] == 'Paper':
+        pass # do something else
+    elif request.form['submit_button'] == 'Paper':
+        pass # do something else
+    else:
+        pass # unknown
     return render_template('home.html', codes=session.keys())
 
 

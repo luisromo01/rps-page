@@ -12,7 +12,8 @@ def home():
 @bp.route('/you-chose', methods=['GET', 'POST'])
 def selection():
     if request.method == 'POST':
-        return render_template('you-chose.html')
+        return render_template('you-chose.html',  selection = request.form['selection'])
+
 #        if request.form['submit_button'] == 'Rock':
 #            return render_template('Rock.html')
 #        elif request.form['submit_button'] == 'Paper':

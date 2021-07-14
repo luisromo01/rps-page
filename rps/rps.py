@@ -12,12 +12,13 @@ def home():
 @bp.route('/you-chose', methods=['GET', 'POST'])
 def selection():
     if request.method == 'POST':
-        if request.form['submit_button'] == 'Rock':
-            return render_template('Rock.html')
-        elif request.form['submit_button'] == 'Paper':
-            return render_template('Paper.html')
-        elif request.form['submit_button'] == 'Paper':
-            return render_template('Scissors.html')
+        return render_template('you-chose.html')
+#        if request.form['submit_button'] == 'Rock':
+#            return render_template('Rock.html')
+#        elif request.form['submit_button'] == 'Paper':
+#            return render_template('Paper.html')
+#        elif request.form['submit_button'] == 'Paper':
+#            return render_template('Scissors.html')
     else:
         pass # unknown
  

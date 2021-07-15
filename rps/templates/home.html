@@ -4,6 +4,8 @@
 
 {% block main %}
 
+{% if new == True %}
+
 <h1>Rock, Paper, Scissors</h1>
 
 <form action = "you-chose" method = "post">
@@ -12,4 +14,12 @@
 	<input type="submit" name="selection" value="Scissors">
 </form>
 <button onClick="window.location.reload();">Refresh Page</button>
+
+<h1> This page is {{ new }} </h1>
+
+{% endif %}
+
+<h1> This page is {{ new }} </h1>
+
+
 {% endblock %}

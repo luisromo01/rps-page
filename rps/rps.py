@@ -4,18 +4,18 @@ import os.path
 from werkzeug.utils import secure_filename
 
 bp = Blueprint('rps',__name__)
-empty = False 
+empty = True 
 
 @bp.route('/')
 def home():
     #set something to false here. then set it to true on the post part below
    return render_template('home.html', codes=session.keys(), new=empty)
 #investigate reload function for home page with if statement for if something selected or not that way, you do everything in one html page.
-@bp.route('/you-chose', methods=['GET', 'POST'])
+@bp.route('/', methods=['GET', 'POST'])
 def selection():
     if request.method == 'POST':
-        #I can probably add the refresh here. not actually refreshing. instead, I render the home page again but I have some sort of if statement for either case. when nothing is selected and for when something is selected.
-        return render_template('you-chose.html',  selection = request.form['selection'])
+        empty=False
+        return render_template('home.html',  selection = request.form['selection'],new = empty)
 
 #        if request.form['submit_button'] == 'Rock':
 #            return render_template('Rock.html')

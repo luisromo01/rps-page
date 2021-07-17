@@ -2,6 +2,7 @@ from flask import render_template, request, redirect, url_for, flash, abort, ses
 import json
 import os.path
 from werkzeug.utils import secure_filename
+from random import randrange
 
 bp = Blueprint('rps',__name__)
 empty = True 
@@ -15,6 +16,7 @@ def home():
 def selection():
     if request.method == 'POST':
         empty=False
+        randrange(10)
         return render_template('home.html',  selection = request.form['selection'],new = empty)
 
 #        if request.form['submit_button'] == 'Rock':

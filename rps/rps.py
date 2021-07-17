@@ -16,8 +16,9 @@ def home():
 def selection():
     if request.method == 'POST':
         empty=False
-        randrange(10)
-        return render_template('home.html',  selection = request.form['selection'],new = empty)
+        choice_dict = {0: 'Rock', 1: 'Paper', 2: 'Scissors'}
+        cpu_chose = choice_dict[randrange(3)]
+        return render_template('home.html',  selection = request.form['selection'],new = empty, cpu_select = cpu_chose)
 
 #        if request.form['submit_button'] == 'Rock':
 #            return render_template('Rock.html')

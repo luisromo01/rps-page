@@ -8,18 +8,21 @@
 
 <h1>Rock, Paper, Scissors</h1>
 
-<form action = "you-chose" method = "post">
+<form action = "/" method = "post">
 	<input type="submit" name="selection" value="Rock">
 	<input type="submit" name="selection" value="Paper">
 	<input type="submit" name="selection" value="Scissors">
 </form>
-<button onClick="window.location.reload();">Refresh Page</button>
+<!--<button onClick="window.location.reload();">Refresh Page</button> -->
 
 <h1> This page is {{ new }} </h1>
+
+{% else %}
+
+<h1> You chose </h1>
+
+<h2> {{ selection }} </h2>
+
 
 {% endif %}
-
-<h1> This page is {{ new }} </h1>
-
-
 {% endblock %}

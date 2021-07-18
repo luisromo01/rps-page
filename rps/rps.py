@@ -6,7 +6,9 @@ from random import randrange
 
 bp = Blueprint('rps',__name__)
 empty = True 
-
+#todo: add code for saving win/loss record using json and/or database
+#add more gui elements using css/javascript
+#make the computer AI more intelligent when making a selection
 @bp.route('/')
 def home():
     #set something to false here. then set it to true on the post part below

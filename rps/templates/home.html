@@ -4,15 +4,16 @@
 
 {% block main %}
 
-{% if logged_in == False %}
+{% if is_logged_in == False %}
 
 <h1> please log in </h1>
+
 
 {% elif new == True %}
 
 <h1>Rock, Paper, Scissors</h1>
 
-<form action = "/" method = "post">
+<form action = "/select" method = "post">
 	<input type="submit" name="selection" value="Rock">
 	<input type="submit" name="selection" value="Paper">
 	<input type="submit" name="selection" value="Scissors">

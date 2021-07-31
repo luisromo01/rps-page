@@ -2,6 +2,7 @@
 #add more gui elements using css/javascript
 #make the computer AI more intelligent when making a selection
 #incorporate database by creating log in page.
+#create a "log in" page as part of home
 from flask import render_template, request, redirect, url_for, flash, abort, session, jsonify, Blueprint
 import json
 import os.path
@@ -11,6 +12,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 bp = Blueprint('rps',__name__)
 empty = True #created this so that the page knows if someone has made a selection between rock, paper, or scissors yet. 
+logged_in= False #by default the home page will know that the user is not logged in
 @bp.route('/')
 def home(): #should be the first page the users sees. The variable new is set to True and that's what home.html will use to choose what it will show the user
    return render_template('home.html', codes=session.keys(), new=empty)

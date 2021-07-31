@@ -4,7 +4,11 @@
 
 {% block main %}
 
-{% if new == True %}
+{% if logged_in == False %}
+
+<h1> please log in </h1>
+
+{% elif new == True %}
 
 <h1>Rock, Paper, Scissors</h1>
 

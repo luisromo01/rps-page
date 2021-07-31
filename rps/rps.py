@@ -7,6 +7,7 @@ import json
 import os.path
 from werkzeug.utils import secure_filename
 from random import randrange
+from flask_sqlalchemy import SQLAlchemy
 
 bp = Blueprint('rps',__name__)
 empty = True #created this so that the page knows if someone has made a selection between rock, paper, or scissors yet. 

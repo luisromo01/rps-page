@@ -3,6 +3,7 @@
 #make the computer AI more intelligent when making a selection
 #incorporate database by creating log in page.
 #create a "log in" page as part of home
+#continue working on Log in page. need to find way for page to know that the user is logged in 
 from flask import render_template, request, redirect, url_for, flash, abort, session, jsonify, Blueprint
 import json
 import os.path
@@ -12,8 +13,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 bp = Blueprint('rps',__name__)
 empty = True #created this so that the page knows if someone has made a selection between rock, paper, or scissors yet. 
-logged_in= True #by default the home page will know that the user is not logged in
-@bp.route('/')
+logged_in= False #by default the home page will know that the user is not logged in
+@bp.route('/', methods =['GET', 'POST'])
 def home(): #should be the first page the users sees. The variable new is set to True and that's what home.html will use to choose what it will show the user
    return render_template('home.html', codes=session.keys(), new=empty, is_logged_in = logged_in)
 #investigate reload function for home page with if statement for if something selected or not that way, you do everything in one html page.

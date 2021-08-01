@@ -14,9 +14,8 @@ from flask_sqlalchemy import SQLAlchemy
 bp = Blueprint('rps',__name__)
 empty = True #created this so that the page knows if someone has made a selection between rock, paper, or scissors yet. 
 logged_in= False #by default the home page will know that the user is not logged in
-@bp.route('/', methods =['GET', 'POST']
+@bp.route('/', methods =['GET', 'POST'])
 def home(): #should be the first page the users sees. The variable new is set to True and that's what home.html will use to choose what it will show the user
-    #logged_in=request.args.get('logged_in')
    return render_template('home.html', codes=session.keys(), new=empty, is_logged_in = logged_in)
 #investigate reload function for home page with if statement for if something selected or not that way, you do everything in one html page.
 @bp.route('/select', methods=['GET', 'POST'])
